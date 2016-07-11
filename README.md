@@ -28,3 +28,8 @@ npm install from repo root folder
 
 ## Running
 ng serve
+
+## Mock server (based on json-server. see docs in https://github.com/typicode/json-server)
+* https://kmeetup-be.herokuapp.com/events
+* https://kmeetup-be.herokuapp.com/events/1
+* https://kmeetup-be.herokuapp.com/profile
