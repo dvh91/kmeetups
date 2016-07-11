@@ -1,0 +1,30 @@
+homepage
+  navbar
+    logo
+    menu
+      my meetups
+      future meetups
+      past meetups
+      open a meetup
+    login (with kaltura creds)
+  my next meetup
+    event
+  upcoming events grid
+    events
+
+event page
+  event details
+  check in (in time frame)
+  invite (future only)
+
+  event item
+    name
+    date, time
+    place
+    group
+    organizer
+    recorded video (from kino)
+    live (?)
+    attenders
+    invite
+    comments
