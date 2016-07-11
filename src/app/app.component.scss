@@ -1,0 +1,98 @@
+@import "style/variables";
+@import "style/fonts";
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+.navbar.navbar-top {
+  background-color: #69fbb8;
+
+  .navbar-brand a {
+    color: $body-bg;
+    font-style: italic;
+    font-weight: bold;
+
+    &:hover,
+    &:active:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+.btn-secondary {
+  background-color: $body-bg;
+  border-color: $body-bg;
+  color: #fff;
+
+  &:hover,
+  &:active:hover,
+  &:active,
+  &:focus {
+    background-color: $jumbotron-bg;
+    border-color: $jumbotron-bg;
+    color: #fff;
+  }
+}
+
+.btn-white-outline {
+  border-color: #fff;
+  color: #fff;
+
+  &:hover,
+  &:active:hover,
+  &:active,
+  &:focus {
+    color: #fff;
+  }
+}
+
+.jumbotron {
+  color: $jumbotron-color;
+  padding: 6rem 1rem 11rem 1rem;
+  text-align: center;
+
+  h1 {
+    font-weight: bold;
+  }
+}
+
+.cards-container {
+  margin-top: -9rem;
+}
+
+.card {
+  color: $gray;
+  margin-bottom: $spacer-y * 2;
+
+  .card-title a {
+    color: $gray-dark;
+    font-weight: bold;
+  }
+  .event-details {
+    font-size: $font-size-sm;
+    color: $gray-light;
+  }
+}
+
+.event-trend {
+  display: inline-block;
+  line-height: 40px;
+
+  &:before {
+    margin-right: 1rem;
+  }
+
+  &.event-trend-up {
+    &:before {
+      content: ":)"
+    }
+  }
+  &.event-trend-down {
+    &:before {
+      content: ":("
+    }
+  }
+}
+
+.btn-rsvp-toggle {
+  width: 120px;
+}
