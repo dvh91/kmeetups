@@ -1,5 +1,6 @@
 @import "variables";
 @import "fonts";
+@import "icons";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 .navbar.navbar-top {
@@ -70,25 +71,49 @@
   .event-details {
     font-size: $font-size-sm;
     color: $gray-light;
+
+    .icon-pin {
+      font-size: 120%;
+    }
+    .icon-clock {
+      font-size: 120%;
+    }
   }
 }
 
 .event-trend {
   display: inline-block;
+  position: relative;
   line-height: 40px;
+  color: $gray-light;
 
-  &:before {
-    margin-right: 1rem;
+  &:after {
+    font-family: 'icomoon' !important;
+    position: absolute;
+    top: -3px; left: -3px;
+    width: 12px; height: 13px;
+    font-size: 10px;
+    color: #fff;
+    line-height: 14px;
+    text-align: center;
+    border-radius: 3px;
+  }
+
+  .icon-smiley {
+    margin-right: 0.5rem;
+    font-size: 24px;
   }
 
   &.event-trend-up {
-    &:before {
-      content: ":)"
+    &:after {
+      content: '\e901';
+      background-color: #00d0ff;
     }
   }
   &.event-trend-down {
-    &:before {
-      content: ":("
+    &:after {
+      content: '\e900';
+      background-color: #ff9d42;
     }
   }
 }
