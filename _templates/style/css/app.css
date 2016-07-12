@@ -22,6 +22,40 @@
   src: url("../../fonts/proximanova-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/proximanova-semibold-webfont.woff2") format("woff2"), url("../../fonts/proximanova-semibold-webfont.woff") format("woff"), url("../../fonts/proximanova-semibold-webfont.ttf") format("truetype"), url("../../fonts/proximanova-semibold-webfont.svg#proxima_novasemibold") format("svg");
   font-weight: 700;
   font-style: normal; }
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-buzz_down:before {
+  content: "\e900"; }
+
+.icon-buzz_up:before {
+  content: "\e901"; }
+
+.icon-check:before {
+  content: "\e902"; }
+
+.icon-clock:before {
+  content: "\e903"; }
+
+.icon-pin:before {
+  content: "\e904"; }
+
+.icon-smiley_grumpy:before {
+  content: "\e905"; }
+
+.icon-smiley_smile:before {
+  content: "\e906"; }
+
 /*!
  * Bootstrap v4.0.0-alpha.2 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -5168,16 +5202,37 @@ a.bg-danger:focus, a.bg-danger:hover {
   .card .event-details {
     font-size: 0.875rem;
     color: #818a91; }
+    .card .event-details .icon-pin {
+      font-size: 120%; }
+    .card .event-details .icon-clock {
+      font-size: 120%; }
 
 .event-trend {
   display: inline-block;
-  line-height: 40px; }
-  .event-trend:before {
-    margin-right: 1rem; }
-  .event-trend.event-trend-up:before {
-    content: ":)"; }
-  .event-trend.event-trend-down:before {
-    content: ":("; }
+  position: relative;
+  line-height: 40px;
+  color: #818a91; }
+  .event-trend:after {
+    font-family: 'icomoon' !important;
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 12px;
+    height: 13px;
+    font-size: 10px;
+    color: #fff;
+    line-height: 14px;
+    text-align: center;
+    border-radius: 3px; }
+  .event-trend .icon-smiley {
+    margin-right: 0.5rem;
+    font-size: 24px; }
+  .event-trend.event-trend-up:after {
+    content: '\e901';
+    background-color: #00d0ff; }
+  .event-trend.event-trend-down:after {
+    content: '\e900';
+    background-color: #ff9d42; }
 
 .btn-rsvp-toggle {
   width: 120px; }
