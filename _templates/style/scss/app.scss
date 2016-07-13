@@ -50,6 +50,9 @@
   color: $jumbotron-color;
   padding: 6rem 1rem 11rem 1rem;
   text-align: center;
+  background-repeat: repeat-x;
+  background-position: bottom center;
+  // background-size: cover;
 
   h1 {
     font-weight: bold;

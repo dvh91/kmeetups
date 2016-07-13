@@ -5186,7 +5186,9 @@ a.bg-danger:focus, a.bg-danger:hover {
 .jumbotron {
   color: #fff;
   padding: 6rem 1rem 11rem 1rem;
-  text-align: center; }
+  text-align: center;
+  background-repeat: repeat-x;
+  background-position: bottom center; }
   .jumbotron h1 {
     font-weight: bold; }
 
