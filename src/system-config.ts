@@ -36,6 +36,7 @@ const barrels: string[] = [
   'app/event-grid',
   'app/navbar',
   'app/event-card',
+  'app/event-grid-infinite',
   /** @cli-barrel */
 ];
 
