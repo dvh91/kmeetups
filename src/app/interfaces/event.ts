@@ -1,7 +1,7 @@
 import { Group } from './group';
 import { User } from './user';
 
-export interface Event {
+export interface EventInterface {
   title: string;
   description: string;
   group: Group,

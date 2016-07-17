@@ -4,7 +4,8 @@ import { Component, OnInit } from '@angular/core';
   moduleId: module.id,
   selector: 'app-event-card',
   templateUrl: 'event-card.component.html',
-  styleUrls: ['event-card.component.css']
+  styleUrls: ['event-card.component.css'],
+  inputs: ['event']
 })
 export class EventCardComponent implements OnInit {
 

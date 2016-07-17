@@ -1,13 +1,13 @@
 <div class="card">
   <div class="card-block">
-    <h4 class="card-title"><a href="#">Meet AngularJS Part 2</a></h4>
+    <h4 class="card-title"><a href="#">{{event.title}}</a></h4>
     <div class="event-details">
       <span><i class="icon-clock"></i> MON, JUNE 20 @ 6:30 PM</span>
-      <span class="m-l-2"><i class="icon-pin"></i> Conf Tel Aviv</span>
+      <span class="m-l-2"><i class="icon-pin"></i> {{event.location}}</span>
     </div>
   </div>
   <div class="card-block">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-text">{{event.description}}</p>
   </div>
   <div class="card-block">
     <div class="row">
@@ -15,7 +15,7 @@
         <button disabled="true" class="btn btn-default">Login to RSVP</button>
       </div>
       <div class="col col-xs-6 text-xs-right">
-        <span class="event-trend event-trend-down"><i class="icon-smiley icon-smiley_grumpy"></i>12 going</span>
+        <span class="event-trend event-trend-down"><i class="icon-smiley icon-smiley_grumpy"></i>{{event.attending.total}} going</span>
       </div>
     </div>
   </div>
