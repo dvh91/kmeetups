@@ -11,4 +11,6 @@ import { EventGridInfiniteComponent } from './event-grid-infinite';
   encapsulation: ViewEncapsulation.None,
   directives: [NavbarComponent, EventGridComponent, EventGridInfiniteComponent]
 })
-export class AppComponent {}
+export class AppComponent {
+  events = [1,2,3,4];
+}
