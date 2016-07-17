@@ -12,5 +12,5 @@ import { EventGridInfiniteComponent } from './event-grid-infinite';
   directives: [NavbarComponent, EventGridComponent, EventGridInfiniteComponent]
 })
 export class AppComponent {
-  events = [1,2,3,4];
+  events = new Array(6);
 }
