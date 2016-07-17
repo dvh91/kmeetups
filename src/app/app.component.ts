@@ -48,5 +48,8 @@ export class AppComponent {
       }
     });
     this.events.push(sampleEvent);
+    this.events.push(sampleEvent);
+    this.events.push(sampleEvent);
+    this.events.push(sampleEvent);
   }
 }
