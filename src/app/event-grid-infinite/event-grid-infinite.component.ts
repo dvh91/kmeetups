@@ -22,6 +22,7 @@ var sampleEvent = new EventModel({
   endTime: 1468431000,
   attending: {
     total: 10,
+    trend: 0,
     users: [{
       firstName: 'dvir',
       lastName: 'hazout',

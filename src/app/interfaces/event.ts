@@ -14,6 +14,7 @@ export interface EventInterface {
   endTime: any,
   attending: {
     total: number,
+    trend: number,
     users: Array<UserInterface>
   }
 }

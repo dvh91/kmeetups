@@ -1,0 +1,9 @@
+<span
+  class="event-trend"
+  [ngClass]="{'event-trend-up': trend >= 0, 'event-trend-down': trend < 0}">
+  <i
+    class="icon-smiley"
+    [ngClass]="{'icon-smiley_smile': trend >= 0, 'icon-smiley_grumpy': trend < 0}">
+  </i>
+  {{attendersCount}} going
+</span>

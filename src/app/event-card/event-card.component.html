@@ -15,7 +15,10 @@
         <app-event-rsvp-toggle-btn></app-event-rsvp-toggle-btn>
       </div>
       <div class="col col-xs-6 text-xs-right">
-        <span class="event-trend event-trend-up"><i class="icon-smiley icon-smiley_smile"></i>{{event.attending.total}} going</span>
+        <app-event-attending-trend-counter
+          [trend]="event.attending.trend"
+          [attendersCount]="event.attending.total">
+        </app-event-attending-trend-counter>
       </div>
     </div>
   </div>
