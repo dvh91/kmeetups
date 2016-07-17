@@ -3,22 +3,23 @@ import { EventGridComponent } from '../event-grid';
 import { EventModel } from '../models/event';
 
 var sampleEvent = new EventModel({
-  title: 'Angular 2',
-  description: 'intro to Angular 2',
+  title: 'Angular 2 - ngrx essentials',
+  slug: 'angular-2-ngrx-essentials',
+  description: 'Angular2 ngrx intro - workshop about implementing ngrx, the redux implementaion in Angular2 - Store, time travaller, dispacher and more',
   group: {
     slug: 'angular-js',
     name: 'kNG2',
-    createdOn: 123
+    createdOn: 1468431000
   },
   location: 'Conf-TLV',
-  createdOn: 123,
+  createdOn: 1468431000,
   organizer: {
     firstName: 'dvir',
     lastName: 'hazout',
     email: 'dvir.hazut@kaltura.com'
   },
-  startTime: 123,
-  endTime: 123,
+  startTime: 1468431000,
+  endTime: 1468431000,
   attending: {
     total: 10,
     users: [{

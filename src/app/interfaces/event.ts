@@ -1,17 +1,19 @@
-import { Group } from './group';
-import { User } from './user';
+import { GroupInterface } from './group';
+import { UserInterface } from './user';
 
 export interface EventInterface {
   title: string;
+  slug: string,
   description: string;
-  group: Group,
+  content?: string;
+  group: GroupInterface,
   location: string,
-  createdOn: number,
-  organizer: User,
-  startTime: number,
-  endTime: number,
+  createdOn: any,
+  organizer: UserInterface,
+  startTime: any,
+  endTime: any,
   attending: {
     total: number,
-    users: Array<User>
+    users: Array<UserInterface>
   }
 }
