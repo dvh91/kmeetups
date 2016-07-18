@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 import { NavbarComponent } from './navbar';
-import { EventGridInfiniteComponent } from './event-grid-infinite';
 
 @Component({
   moduleId: module.id,
@@ -8,8 +8,8 @@ import { EventGridInfiniteComponent } from './event-grid-infinite';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
   encapsulation: ViewEncapsulation.None,
-  directives: [NavbarComponent, EventGridInfiniteComponent]
+  directives: [ROUTER_DIRECTIVES, NavbarComponent]
 })
 export class AppComponent {
-  
+
 }
