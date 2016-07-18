@@ -1,5 +1,6 @@
 import { bootstrap } from '@angular/platform-browser-dynamic';
-import { enableProdMode } from '@angular/core';
+import { enableProdMode, provide, PLATFORM_PIPES, PLATFORM_DIRECTIVES } from '@angular/core';
+import {ROUTER_DIRECTIVES} from '@angular/router';
 import { AppComponent, environment } from './app/';
 import { appRouterProviders } from './app/app.routes';
 
@@ -9,5 +10,10 @@ if (environment.production) {
 }
 
 bootstrap(AppComponent, [
-  appRouterProviders
+  appRouterProviders,
+  provide(PLATFORM_DIRECTIVES,
+    {
+      useValue: [ROUTER_DIRECTIVES],
+      multi: true
+    })
 ]);

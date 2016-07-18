@@ -1,5 +1,4 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
 import { NavbarComponent } from './navbar';
 
 @Component({
@@ -8,7 +7,7 @@ import { NavbarComponent } from './navbar';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
   encapsulation: ViewEncapsulation.None,
-  directives: [ROUTER_DIRECTIVES, NavbarComponent]
+  directives: [NavbarComponent]
 })
 export class AppComponent {
 
