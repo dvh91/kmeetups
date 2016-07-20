@@ -2,6 +2,8 @@
 
 [![Gitter chat](https://badges.gitter.im/dvh91/kmeetups.png)](https://gitter.im/dvh91/kmeetups "Gitter chat")
 
+https://kmeetup.herokuapp.com/
+
 Internal meetups organization web application for Kaltura.
 Will be developed with: Angular 2 (boilerplate with angular-cli), redux (ngrx)
 
