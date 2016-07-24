@@ -8,13 +8,25 @@ import { EventAttendingTrendCounterComponent } from '../event-attending-trend-co
   templateUrl: 'event-card.component.html',
   styleUrls: ['event-card.component.css'],
   inputs: ['event'],
+  outputs: ['rsvpToggle'],
   directives: [EventRsvpToggleBtnComponent, EventAttendingTrendCounterComponent]
 })
 export class EventCardComponent implements OnInit {
+  event: any;
 
   constructor() {}
 
   ngOnInit() {
+  }
+
+  rsvpToggle(event) {
+    if(this.event.attending.rsvpState) {
+      this.event.attending.total--;
+    }
+    else {
+      this.event.attending.total++;
+    }
+    this.event.attending.rsvpState = !this.event.attending.rsvpState;
   }
 
 }

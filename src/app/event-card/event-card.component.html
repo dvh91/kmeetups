@@ -12,7 +12,10 @@
   <div class="card-block">
     <div class="row">
       <div class="col col-xs-6">
-        <app-event-rsvp-toggle-btn></app-event-rsvp-toggle-btn>
+        <app-event-rsvp-toggle-btn
+          [rsvpState]="event.attending.rsvpState"
+          (rsvpToggle)="rsvpToggle()">
+        </app-event-rsvp-toggle-btn>
       </div>
       <div class="col col-xs-6 text-xs-right">
         <app-event-attending-trend-counter

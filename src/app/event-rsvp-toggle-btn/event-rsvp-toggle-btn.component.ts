@@ -1,13 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
   moduleId: module.id,
   selector: 'app-event-rsvp-toggle-btn',
   templateUrl: 'event-rsvp-toggle-btn.component.html',
-  styleUrls: ['event-rsvp-toggle-btn.component.css']
+  styleUrls: ['event-rsvp-toggle-btn.component.css'],
+  inputs: ['rsvpState'],
+  outputs: ['rsvpToggle']
 })
 export class EventRsvpToggleBtnComponent implements OnInit {
-  rsvpState:boolean = false;
+  rsvpToggle = new EventEmitter();
+  rsvpState:boolean;
 
   constructor() {}
 
@@ -15,7 +18,7 @@ export class EventRsvpToggleBtnComponent implements OnInit {
   }
 
   toggleRsvpState() {
-    this.rsvpState = !this.rsvpState;
+    this.rsvpToggle.emit({});
   }
 
 }

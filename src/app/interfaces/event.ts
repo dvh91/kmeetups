@@ -13,6 +13,7 @@ export interface EventInterface {
   startTime: any,
   endTime: any,
   attending: {
+    rsvpState: boolean,
     total: number,
     trend: number,
     users: Array<UserInterface>
