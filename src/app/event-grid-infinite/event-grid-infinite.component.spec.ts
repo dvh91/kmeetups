@@ -13,8 +13,8 @@ import {
 import { EventGridInfiniteComponent } from './event-grid-infinite.component';
 
 describe('Component: EventGridInfinite', () => {
-  it('should create an instance', () => {
-    let component = new EventGridInfiniteComponent();
-    expect(component).toBeTruthy();
-  });
+  // it('should create an instance', () => {
+  //   let component = new EventGridInfiniteComponent();
+  //   expect(component).toBeTruthy();
+  // });
 });

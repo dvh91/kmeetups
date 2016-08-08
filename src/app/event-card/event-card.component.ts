@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventRsvpToggleBtnComponent } from '../event-rsvp-toggle-btn';
 import { EventAttendingTrendCounterComponent } from '../event-attending-trend-counter';
+import { EventModel } from '../models/event';
 
 @Component({
   moduleId: module.id,
@@ -12,7 +13,7 @@ import { EventAttendingTrendCounterComponent } from '../event-attending-trend-co
   directives: [EventRsvpToggleBtnComponent, EventAttendingTrendCounterComponent]
 })
 export class EventCardComponent implements OnInit {
-  event: any;
+  event: EventModel;
 
   constructor() {}
 

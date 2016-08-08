@@ -3,7 +3,7 @@
     <h4 class="card-title"><a [routerLink]="['/events/' + event.slug]">{{event.title}}</a></h4>
     <div class="event-details">
       <span><i class="icon-clock"></i> {{event.startTime | date: 'EEE, LLLL dd @ hh:mm a' | uppercase}}</span>
-      <span class="m-l-2"><i class="icon-pin"></i> {{event.location}}</span>
+      <span class="m-l-2"><i class="icon-pin"></i> {{event.location.name}}</span>
     </div>
   </div>
   <div class="card-block">

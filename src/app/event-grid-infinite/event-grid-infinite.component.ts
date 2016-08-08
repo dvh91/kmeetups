@@ -1,146 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { EventsService } from '../services/events.service';
 import { EventGridComponent } from '../event-grid';
 import { EventModel } from '../models/event';
-
-var e1 = new EventModel({
-  title: 'Angular 2 - ngrx essentials',
-  slug: 'angular-2-ngrx-essentials',
-  description: 'Angular2 ngrx intro - workshop about implementing ngrx, the redux implementaion in Angular2 - Store, time travaller, dispacher and more',
-  group: {
-    slug: 'angular-js',
-    name: 'kNG2',
-    createdOn: 1468431000
-  },
-  location: 'Conf-TLV',
-  createdOn: 1468431000,
-  organizer: {
-    firstName: 'dvir',
-    lastName: 'hazout',
-    email: 'dvir.hazut@kaltura.com'
-  },
-  startTime: 1468431000,
-  endTime: 1468431000,
-  attending: {
-    rsvpState: true,
-    total: 10,
-    trend: 0,
-    users: [{
-      firstName: 'dvir',
-      lastName: 'hazout',
-      email: 'dvir.hazut@kaltura.com'
-    },
-    {
-      firstName: 'dvir',
-      lastName: 'hazout',
-      email: 'dvir.hazut@kaltura.com'
-    }]
-  }
-});
-
-var e2 = new EventModel({
-  title: 'Angular 2 - ngrx essentials',
-  slug: 'angular-2-ngrx-essentials',
-  description: 'Angular2 ngrx intro - workshop about implementing ngrx, the redux implementaion in Angular2 - Store, time travaller, dispacher and more',
-  group: {
-    slug: 'angular-js',
-    name: 'kNG2',
-    createdOn: 1468431000
-  },
-  location: 'Conf-TLV',
-  createdOn: 1468431000,
-  organizer: {
-    firstName: 'dvir',
-    lastName: 'hazout',
-    email: 'dvir.hazut@kaltura.com'
-  },
-  startTime: 1468431000,
-  endTime: 1468431000,
-  attending: {
-    rsvpState: true,
-    total: 10,
-    trend: 0,
-    users: [{
-      firstName: 'dvir',
-      lastName: 'hazout',
-      email: 'dvir.hazut@kaltura.com'
-    },
-    {
-      firstName: 'dvir',
-      lastName: 'hazout',
-      email: 'dvir.hazut@kaltura.com'
-    }]
-  }
-});
-
-var e3 = new EventModel({
-  title: 'Angular 2 - ngrx essentials',
-  slug: 'angular-2-ngrx-essentials',
-  description: 'Angular2 ngrx intro - workshop about implementing ngrx, the redux implementaion in Angular2 - Store, time travaller, dispacher and more',
-  group: {
-    slug: 'angular-js',
-    name: 'kNG2',
-    createdOn: 1468431000
-  },
-  location: 'Conf-TLV',
-  createdOn: 1468431000,
-  organizer: {
-    firstName: 'dvir',
-    lastName: 'hazout',
-    email: 'dvir.hazut@kaltura.com'
-  },
-  startTime: 1468431000,
-  endTime: 1468431000,
-  attending: {
-    rsvpState: true,
-    total: 10,
-    trend: 0,
-    users: [{
-      firstName: 'dvir',
-      lastName: 'hazout',
-      email: 'dvir.hazut@kaltura.com'
-    },
-    {
-      firstName: 'dvir',
-      lastName: 'hazout',
-      email: 'dvir.hazut@kaltura.com'
-    }]
-  }
-});
-
-var e4 = new EventModel({
-  title: 'Angular 2 - ngrx essentials',
-  slug: 'angular-2-ngrx-essentials',
-  description: 'Angular2 ngrx intro - workshop about implementing ngrx, the redux implementaion in Angular2 - Store, time travaller, dispacher and more',
-  group: {
-    slug: 'angular-js',
-    name: 'kNG2',
-    createdOn: 1468431000
-  },
-  location: 'Conf-TLV',
-  createdOn: 1468431000,
-  organizer: {
-    firstName: 'dvir',
-    lastName: 'hazout',
-    email: 'dvir.hazut@kaltura.com'
-  },
-  startTime: 1468431000,
-  endTime: 1468431000,
-  attending: {
-    rsvpState: true,
-    total: 10,
-    trend: 0,
-    users: [{
-      firstName: 'dvir',
-      lastName: 'hazout',
-      email: 'dvir.hazut@kaltura.com'
-    },
-    {
-      firstName: 'dvir',
-      lastName: 'hazout',
-      email: 'dvir.hazut@kaltura.com'
-    }]
-  }
-});
 
 @Component({
   moduleId: module.id,
@@ -150,87 +11,37 @@ var e4 = new EventModel({
   directives: [EventGridComponent]
 })
 export class EventGridInfiniteComponent implements OnInit {
-  events: Array<EventModel> = new Array();
+  public events: Array<EventModel> = new Array();
+  public total: number;
+  public loading: boolean = true;
+  private start: number = 0;
+  private end: number = 6;
 
-  constructor() {
-    this.events.push(e1);
-    this.events.push(e2);
-    this.events.push(e3);
-    this.events.push(e4);
-  }
+  constructor(private eventsService: EventsService) { }
 
   ngOnInit() {
+    this.getEvents(this.start, this.end);
+  }
+
+  getEvents(start: number, end: number) {
+    if(this.start === 0) {
+      this.loading = true;
+    }
+    this.eventsService.getEvents(start, end)
+      .subscribe(res => {
+        this.loading = false;
+        this.events = this.events.concat(res.data.map(event => new EventModel(event)));
+        this.total = parseInt(res.total);
+      });
   }
 
   loadMore() {
-    this.events.push(new EventModel({
-      title: 'Angular 2 - ngrx essentials',
-      slug: 'angular-2-ngrx-essentials',
-      description: 'Angular2 ngrx intro - workshop about implementing ngrx, the redux implementaion in Angular2 - Store, time travaller, dispacher and more',
-      group: {
-        slug: 'angular-js',
-        name: 'kNG2',
-        createdOn: 1468431000
-      },
-      location: 'Conf-TLV',
-      createdOn: 1468431000,
-      organizer: {
-        firstName: 'dvir',
-        lastName: 'hazout',
-        email: 'dvir.hazut@kaltura.com'
-      },
-      startTime: 1468431000,
-      endTime: 1468431000,
-      attending: {
-        rsvpState: true,
-        total: 10,
-        trend: 0,
-        users: [{
-          firstName: 'dvir',
-          lastName: 'hazout',
-          email: 'dvir.hazut@kaltura.com'
-        },
-        {
-          firstName: 'dvir',
-          lastName: 'hazout',
-          email: 'dvir.hazut@kaltura.com'
-        }]
-      }
-    }));
-    this.events.push(new EventModel({
-      title: 'Angular 2 - ngrx essentials',
-      slug: 'angular-2-ngrx-essentials',
-      description: 'Angular2 ngrx intro - workshop about implementing ngrx, the redux implementaion in Angular2 - Store, time travaller, dispacher and more',
-      group: {
-        slug: 'angular-js',
-        name: 'kNG2',
-        createdOn: 1468431000
-      },
-      location: 'Conf-TLV',
-      createdOn: 1468431000,
-      organizer: {
-        firstName: 'dvir',
-        lastName: 'hazout',
-        email: 'dvir.hazut@kaltura.com'
-      },
-      startTime: 1468431000,
-      endTime: 1468431000,
-      attending: {
-        rsvpState: true,
-        total: 10,
-        trend: 0,
-        users: [{
-          firstName: 'dvir',
-          lastName: 'hazout',
-          email: 'dvir.hazut@kaltura.com'
-        },
-        {
-          firstName: 'dvir',
-          lastName: 'hazout',
-          email: 'dvir.hazut@kaltura.com'
-        }]
-      }
-    }));
+    this.start = this.end;
+    this.end = this.end + 2;
+    this.getEvents(this.start, this.end);
   }
 
+  canLoadMore() {
+    return this.events.length < this.total;
+  }
 }
