@@ -4,7 +4,7 @@ import { UserInterface } from './user';
 export interface EventInterface {
   title: string;
   slug: string,
-  description: string;
+  description: string,
   content?: string;
   group: GroupInterface,
   location: string,
