@@ -37,6 +37,8 @@ const barrels: string[] = [
   'app/navbar',
   'app/event-card',
   'app/event-grid-infinite',
+  'app/event-rsvp-toggle-btn',
+  'app/event-attending-trend-counter',
   /** @cli-barrel */
 ];
 

@@ -10,11 +10,11 @@ import {
   async, inject
 } from '@angular/core/testing';
 
-import { EventGridInfiniteComponent } from './event-grid-infinite.component';
+import { EventRsvpToggleBtnComponent } from './event-rsvp-toggle-btn.component';
 
-describe('Component: EventGridInfinite', () => {
+describe('Component: EventRsvpToggleBtn', () => {
   it('should create an instance', () => {
-    let component = new EventGridInfiniteComponent();
+    let component = new EventRsvpToggleBtnComponent();
     expect(component).toBeTruthy();
   });
 });

@@ -1,6 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { NavbarComponent } from './navbar';
-import { EventGridComponent } from './event-grid';
 import { EventGridInfiniteComponent } from './event-grid-infinite';
 
 @Component({
@@ -9,8 +8,8 @@ import { EventGridInfiniteComponent } from './event-grid-infinite';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
   encapsulation: ViewEncapsulation.None,
-  directives: [NavbarComponent, EventGridComponent, EventGridInfiniteComponent]
+  directives: [NavbarComponent, EventGridInfiniteComponent]
 })
 export class AppComponent {
-  events = new Array(6);
+  
 }
