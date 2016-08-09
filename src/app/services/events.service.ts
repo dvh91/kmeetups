@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
-const API_BASE_PATH = 'http://kmeetup-be.herokuapp.com';
+const API_BASE_PATH = 'https://kmeetup-be.herokuapp.com';
 
 @Injectable()
 export class EventsService {
