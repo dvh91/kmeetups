@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventsService } from '../services/events.service';
-import { EventGridComponent } from '../event-grid';
 import { EventModel } from '../models/event';
+import { EventGridComponent } from '../event-grid';
 
 @Component({
   moduleId: module.id,
