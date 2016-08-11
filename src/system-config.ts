@@ -19,6 +19,10 @@ const packages: any = {
   '@ngrx/store': {
     main: 'index.js',
     format: 'cjs'
+  },
+  '@ngrx/store-devtools': {
+    main: 'index.js',
+    format: 'cjs'
   }
 };
 

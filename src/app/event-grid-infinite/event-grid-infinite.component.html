@@ -4,6 +4,9 @@
   </p>
   <app-event-grid [events]="events"></app-event-grid>
   <div *ngIf="canLoadMore()" class="text-xs-center m-t-2 m-b-3">
-    <a class="btn btn-white-outline" (click)="loadMore()">More meetups</a>
+    <a class="btn btn-white-outline" (click)="loadMore(2)">
+      <span *ngIf="!appendLoading">More meetups</span>
+      <span *ngIf="appendLoading">Loading...</span>
+    </a>
   </div>
 </div>
