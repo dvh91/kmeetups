@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
+  //moduleId: module.id,
   selector: 'app-event-attending-trend-counter',
   templateUrl: 'event-attending-trend-counter.component.html',
-  styleUrls: ['event-attending-trend-counter.component.css'],
+  styleUrls: ['event-attending-trend-counter.component.scss'],
   inputs: ['trend', 'attendersCount']
 })
 export class EventAttendingTrendCounterComponent implements OnInit {

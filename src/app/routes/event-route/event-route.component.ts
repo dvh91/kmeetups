@@ -4,10 +4,10 @@ import { EventsService } from '../../services/events.service';
 import { EventModel } from '../../models/event';
 
 @Component({
-  moduleId: module.id,
+  //moduleId: module.id,
   selector: 'app-event-route',
   templateUrl: 'event-route.component.html',
-  styleUrls: ['event-route.component.css']
+  styleUrls: ['event-route.component.scss']
 })
 export class EventRouteComponent implements OnInit {
 

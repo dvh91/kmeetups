@@ -4,10 +4,10 @@ import { EventAttendingTrendCounterComponent } from '../event-attending-trend-co
 import { EventModel } from '../models/event';
 
 @Component({
-  moduleId: module.id,
+  //moduleId: module.id,
   selector: 'app-event-card',
   templateUrl: 'event-card.component.html',
-  styleUrls: ['event-card.component.css'],
+  styleUrls: ['event-card.component.scss'],
   inputs: ['event'],
   outputs: ['rsvpToggle'],
   directives: [EventRsvpToggleBtnComponent, EventAttendingTrendCounterComponent]

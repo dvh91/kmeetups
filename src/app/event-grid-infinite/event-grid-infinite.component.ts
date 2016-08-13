@@ -10,10 +10,10 @@ import { EventGridComponent } from '../event-grid';
 import { GET_EVENTS, GET_EVENTS_SUCCESS, ADD_EVENTS, CHANGE_RSVP_STATE, UPDATE_TOTAL, GET_MORE_EVENTS, GET_MORE_EVENTS_SUCCESS } from '../reducers/events.reducer';
 
 @Component({
-  moduleId: module.id,
+  //moduleId: module.id,
   selector: 'app-event-grid-infinite',
   templateUrl: 'event-grid-infinite.component.html',
-  styleUrls: ['event-grid-infinite.component.css'],
+  styleUrls: ['event-grid-infinite.component.scss'],
   directives: [EventGridComponent]
 })
 export class EventGridInfiniteComponent implements OnInit {

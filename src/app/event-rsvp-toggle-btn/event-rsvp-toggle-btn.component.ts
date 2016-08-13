@@ -1,10 +1,10 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
+  //moduleId: module.id,
   selector: 'app-event-rsvp-toggle-btn',
   templateUrl: 'event-rsvp-toggle-btn.component.html',
-  styleUrls: ['event-rsvp-toggle-btn.component.css'],
+  styleUrls: ['event-rsvp-toggle-btn.component.scss'],
   inputs: ['rsvpState'],
   outputs: ['rsvpToggle']
 })
