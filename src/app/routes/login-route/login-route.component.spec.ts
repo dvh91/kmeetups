@@ -10,11 +10,11 @@ import {
   async, inject
 } from '@angular/core/testing';
 
-import { EventGridInfiniteComponent } from './event-grid-infinite.component';
+import { LoginRouteComponent } from './login-route.component';
 
-describe('Component: EventGridInfinite', () => {
-  // it('should create an instance', () => {
-  //   let component = new EventGridInfiniteComponent();
-  //   expect(component).toBeTruthy();
-  // });
+describe('Component: LoginRoute', () => {
+  it('should create an instance', () => {
+    let component = new LoginRouteComponent();
+    expect(component).toBeTruthy();
+  });
 });
