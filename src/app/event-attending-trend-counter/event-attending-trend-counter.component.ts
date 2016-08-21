@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  //moduleId: module.id,
+  
   selector: 'app-event-attending-trend-counter',
   templateUrl: 'event-attending-trend-counter.component.html',
   styleUrls: ['event-attending-trend-counter.component.scss'],

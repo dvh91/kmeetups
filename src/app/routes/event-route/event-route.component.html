@@ -1,5 +1,56 @@
 <div class="container">
-  <div class="card card-block m-t-3">
-    <pre>{{event | json}}</pre>
+
+  <div class="card m-t-3">
+    <div class="card-header">
+      <div class="row">
+        <div class="col-xs-2">
+          <img src="https://angular.io/resources/images/logos/angular2/angular.png" style="background-color:blue" class="img-fluid img-rounded" alt="" />
+        </div>
+        <div class="col-xs-10">
+          <h4 class="card-title">{{event?.title}}</h4>
+          <div class="m-b-1">
+            <span><i class="icon-clock"></i> {{event?.startTime | date: 'EEE, LLLL dd @ hh:mm a' | uppercase}}</span>
+            <span class="m-l-2"><i class="icon-pin"></i> {{event?.location?.name}}</span>
+          </div>
+          <app-event-rsvp-toggle-btn
+            [rsvpState]="event?.attending?.rsvpState"
+            (rsvpToggle)="rsvpToggle()">
+          </app-event-rsvp-toggle-btn>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card-block">
+          <p>
+            {{event?.content}}
+          </p>
+          <div class="present-by">
+            <p class="text-muted">
+              Presented by
+            </p>
+            Dvir Hazout
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card-block">
+          <div class="m-b-2">
+            <app-event-attending-trend-counter
+              [trend]="event?.attending?.trend"
+              [attendersCount]="event?.attending?.total">
+            </app-event-attending-trend-counter>
+          </div>
+
+          <div class="event-attending-list">
+            <div class="m-b-1" *ngFor="let user of event?.attending?.people">
+              <img [src]="user.picture" class="img-rounded m-r-1" width="36" height="36" />
+              {{user.firstName}} {{user.lastName}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>

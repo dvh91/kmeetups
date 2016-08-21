@@ -1,19 +1,10 @@
 import '@ngrx/core/add/operator/select';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/filter';
 
 import { Action } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-
-export const GET_EVENTS = 'GET_EVENTS';
-export const GET_EVENTS_SUCCESS = 'GET_EVENTS_SUCCESS';
-export const GET_EVENT_BY_SLUG = 'GET_EVENT_BY_SLUG';
-export const GET_EVENT_BY_SLUG_SUCCESS = 'GET_EVENT_BY_SLUG_SUCCESS';
-export const ADD_EVENTS = 'ADD_EVENTS';
-export const UPDATE_TOTAL = 'UPDATE_TOTAL';
-export const CHANGE_RSVP_STATE = 'CHANGE_RSVP_STATE';
-export const GET_MORE_EVENTS = 'GET_MORE_EVENTS';
-export const GET_MORE_EVENTS_SUCCESS = 'GET_MORE_EVENTS_SUCCESS';
-
+import * as eventsActions from '../actions/events.actions';
 
 export interface EventsState {
   events: any;
@@ -31,41 +22,41 @@ const initialState: EventsState = {
 
 export const eventsReducer = (state = initialState, action: Action): EventsState => {
   switch (action.type) {
-    case GET_EVENTS:
+    case eventsActions.GET_EVENTS:
       return Object.assign({}, state, {
         loading: true
       });
 
-    case GET_EVENTS_SUCCESS:
+    case eventsActions.GET_EVENTS_SUCCESS:
       return Object.assign({}, state, {
         loading: false
       });
 
-    case GET_EVENT_BY_SLUG:
+    case eventsActions.GET_EVENT_BY_SLUG:
       return state;
 
-    case GET_EVENT_BY_SLUG_SUCCESS:
+    case eventsActions.GET_EVENT_BY_SLUG_SUCCESS:
       return state;
 
-    case ADD_EVENTS:
+    case eventsActions.ADD_EVENTS:
       return Object.assign({}, state, {
         events: state.events.concat(action.payload)
       });
 
-    case UPDATE_TOTAL:
+    case eventsActions.UPDATE_TOTAL:
       return Object.assign({}, state, {
         total: action.payload
       });
 
-    case CHANGE_RSVP_STATE:
+    case eventsActions.CHANGE_RSVP_STATE:
       return state;
 
-    case GET_MORE_EVENTS:
+    case eventsActions.GET_MORE_EVENTS:
       return Object.assign({}, state, {
         appendLoading: true
       });
 
-    case GET_MORE_EVENTS_SUCCESS:
+    case eventsActions.GET_MORE_EVENTS_SUCCESS:
       return Object.assign({}, state, {
         appendLoading: false
       });
@@ -75,9 +66,16 @@ export const eventsReducer = (state = initialState, action: Action): EventsState
   }
 }
 
-export function getEventsSlugs() {
+export function getEvents() {
+  return (state$: Observable<EventsState>) => state$
+    .select(s => s.events);
+};
+
+export function getSingleEventBySlug(slug) {
   return (state$: Observable<EventsState>) => state$
     .select(s => s.events)
-    .map(events => events.events)
-    .map(event => event);
-}
+    .map(eventsState => {
+      return eventsState.events.filter(e => e.slug === slug)
+    })
+    .map(matches => matches[0]);
+};

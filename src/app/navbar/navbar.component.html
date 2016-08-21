@@ -6,8 +6,30 @@
       </div>
     </div>
     <div class="col col-xs-8 text-xs-right">
-      <a href="#" class="btn btn-secondary">Create Meetup</a>
+      <a (click)="lgModal.show()" class="btn btn-secondary">Create Meetup</a>
       <span class="m-l-3">Dvir</span>
     </div>
   </div>
 </nav>
+
+<div bsModal #lgModal="bs-modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" (click)="lgModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Create Meetup</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Meetup title" />
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" placeholder="Meetup content"></textarea>
+        </div>
+        <button type="button" class="btn btn-primary">Add Meetup</button>
+      </div>
+    </div>
+  </div>
+</div>

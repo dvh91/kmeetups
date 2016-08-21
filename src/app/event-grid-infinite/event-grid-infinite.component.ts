@@ -2,15 +2,14 @@ import 'rxjs/add/operator/let';
 
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import { getEventsSlugs } from '../reducers/events.reducer';
 import { Component, OnInit } from '@angular/core';
 import { EventsService } from '../services/events.service';
 import { EventModel } from '../models/event';
 import { EventGridComponent } from '../event-grid';
-import { GET_EVENTS, GET_EVENTS_SUCCESS, ADD_EVENTS, CHANGE_RSVP_STATE, UPDATE_TOTAL, GET_MORE_EVENTS, GET_MORE_EVENTS_SUCCESS } from '../reducers/events.reducer';
+import * as eventsActions from '../actions/events.actions';
 
 @Component({
-  //moduleId: module.id,
+  
   selector: 'app-event-grid-infinite',
   templateUrl: 'event-grid-infinite.component.html',
   styleUrls: ['event-grid-infinite.component.scss'],
@@ -38,24 +37,29 @@ export class EventGridInfiniteComponent implements OnInit {
   }
 
   getEvents(start: number, end: number) {
-    this.store.dispatch({ type: GET_EVENTS });
+    this.store.dispatch(eventsActions.getEvents());
     this.eventsService.getEvents(start, end)
       .subscribe(res => {
-        this.store.dispatch({ type: GET_EVENTS_SUCCESS });
-        this.store.dispatch({ type: ADD_EVENTS, payload: res.data.map(event => new EventModel(event)) });
-        this.store.dispatch({ type: UPDATE_TOTAL, payload: parseInt(res.total) });
+        let mappedEvents = res.data.map(event => new EventModel(event));
+        let total = parseInt(res.total);
+        this.store.dispatch(eventsActions.getEventsSuccess());
+        this.store.dispatch(eventsActions.addEvents(mappedEvents));
+        this.store.dispatch(eventsActions.updateTotal(total));
       });
   }
 
   loadMore(eventsToAdd:number) {
-    this.store.dispatch({ type: GET_MORE_EVENTS });
+    this.store.dispatch(eventsActions.getMoreEvents());
+
     this.start = this.end;
     this.end = this.end + eventsToAdd;
     this.eventsService.getEvents(this.start, this.end)
       .subscribe(res => {
-        this.store.dispatch({ type: GET_MORE_EVENTS_SUCCESS });
-        this.store.dispatch({ type: ADD_EVENTS, payload: res.data.map(event => new EventModel(event)) });
-        this.store.dispatch({ type: UPDATE_TOTAL, payload: parseInt(res.total) });
+        let mappedEvents = res.data.map(event => new EventModel(event));
+        let total = parseInt(res.total);
+        this.store.dispatch(eventsActions.getMoreEventsSuccess());
+        this.store.dispatch(eventsActions.addEvents(mappedEvents));
+        this.store.dispatch(eventsActions.updateTotal(total));
       });
   }
 
@@ -64,6 +68,6 @@ export class EventGridInfiniteComponent implements OnInit {
   }
 
   changeRsvpState() {
-    this.store.dispatch({ type: CHANGE_RSVP_STATE });
+    this.store.dispatch(eventsActions.changeRsvpState(true));
   }
 }

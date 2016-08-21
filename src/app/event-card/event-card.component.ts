@@ -1,33 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { EventRsvpToggleBtnComponent } from '../event-rsvp-toggle-btn';
 import { EventAttendingTrendCounterComponent } from '../event-attending-trend-counter';
 import { EventModel } from '../models/event';
+import * as eventsActions from '../actions/events.actions';
 
 @Component({
-  //moduleId: module.id,
+
   selector: 'app-event-card',
   templateUrl: 'event-card.component.html',
   styleUrls: ['event-card.component.scss'],
   inputs: ['event'],
-  outputs: ['rsvpToggle'],
   directives: [EventRsvpToggleBtnComponent, EventAttendingTrendCounterComponent]
 })
 export class EventCardComponent implements OnInit {
   event: EventModel;
 
-  constructor() {}
+  constructor(public store: Store<any>) {}
 
   ngOnInit() {
   }
 
   rsvpToggle(event) {
-    if(this.event.attending.rsvpState) {
-      this.event.attending.total--;
-    }
-    else {
-      this.event.attending.total++;
-    }
-    this.event.attending.rsvpState = !this.event.attending.rsvpState;
+    this.store.dispatch(eventsActions.changeRsvpState(true));
   }
 
 }
