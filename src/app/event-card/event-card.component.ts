@@ -6,7 +6,6 @@ import { EventModel } from '../models/event';
 import * as eventsActions from '../actions/events.actions';
 
 @Component({
-
   selector: 'app-event-card',
   templateUrl: 'event-card.component.html',
   styleUrls: ['event-card.component.scss'],
