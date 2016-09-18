@@ -3,10 +3,9 @@ import 'rxjs/add/operator/let';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { Component, OnInit } from '@angular/core';
-import { EventsService } from '../services/events.service';
-import { EventModel } from '../models/event';
-import { EventGridComponent } from '../event-grid';
-import * as eventsActions from '../actions/events.actions';
+import { EventsService } from '../../services/events.service';
+import { EventModel } from '../../models/event';
+import * as eventsActions from '../../../state/events/events.actions';
 
 @Component({
 

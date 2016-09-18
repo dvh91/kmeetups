@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { EventModel } from '../models/event';
-import * as eventsActions from '../actions/events.actions';
+import { EventModel } from '../../models/event';
+import * as eventsActions from '../../../state/events/events.actions';
 
 @Component({
   selector: 'app-event-card',

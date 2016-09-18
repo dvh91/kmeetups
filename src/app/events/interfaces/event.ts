@@ -1,5 +1,5 @@
-import { GroupInterface } from './group';
-import { UserInterface } from './user';
+import { GroupInterface } from '../../shared/interfaces/group';
+import { UserInterface } from '../../shared/interfaces/user';
 
 export interface EventInterface {
   title: string;

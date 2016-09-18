@@ -1,8 +1,8 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeRouteComponent } from './routes/home-route';
-import { LoginRouteComponent } from './routes/login-route';
-import { EventRouteComponent } from './routes/event-route';
+import { HomeRouteComponent } from './events/routes/home-route';
+import { EventRouteComponent } from './events/routes/event-route';
+import { LoginRouteComponent } from './auth/routes/login-route';
 
 export const routes: Routes = [
   { path: '', component: HomeRouteComponent },

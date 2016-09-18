@@ -4,7 +4,7 @@ import 'rxjs/add/operator/filter';
 
 import { Action } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import * as eventsActions from '../actions/events.actions';
+import * as eventsActions from './events.actions';
 
 export interface EventsState {
   events: any;

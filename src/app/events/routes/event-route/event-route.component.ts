@@ -5,8 +5,8 @@ import { Store } from '@ngrx/store';
 import { ActivatedRoute } from '@angular/router';
 import { EventsService } from '../../services/events.service';
 import { EventModel } from '../../models/event';
-import { getSingleEventBySlug } from '../../reducers/events.reducer';
-import * as eventsActions from '../../actions/events.actions';
+import { getSingleEventBySlug } from '../../../state/events/events.reducer';
+import * as eventsActions from '../../../state/events/events.actions';
 
 @Component({
 
