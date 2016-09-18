@@ -1,13 +1,11 @@
 import { Component, ViewEncapsulation, ViewContainerRef } from '@angular/core';
-import { NavbarComponent } from './navbar';
 
 @Component({
-  
+
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
-  encapsulation: ViewEncapsulation.None,
-  directives: [NavbarComponent]
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
   viewContainerRef:any;

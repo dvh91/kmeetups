@@ -2,11 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { EventGridInfiniteComponent } from '../../event-grid-infinite';
 
 @Component({
-  
+
   selector: 'app-home-route',
   templateUrl: 'home-route.component.html',
-  styleUrls: ['home-route.component.scss'],
-  directives: [EventGridInfiniteComponent]
+  styleUrls: ['home-route.component.scss']
 })
 export class HomeRouteComponent implements OnInit {
 

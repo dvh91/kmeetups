@@ -9,11 +9,10 @@ import { EventGridComponent } from '../event-grid';
 import * as eventsActions from '../actions/events.actions';
 
 @Component({
-  
+
   selector: 'app-event-grid-infinite',
   templateUrl: 'event-grid-infinite.component.html',
-  styleUrls: ['event-grid-infinite.component.scss'],
-  directives: [EventGridComponent]
+  styleUrls: ['event-grid-infinite.component.scss']
 })
 export class EventGridInfiniteComponent implements OnInit {
   public events: Array<EventModel> = new Array();

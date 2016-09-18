@@ -11,8 +11,9 @@ export class EventsEffects {
 
   constructor(private actions$: Actions) {}
 
-  @Effect() getSingleEventBySlug$ = this.actions$
-    .ofType(eventsActions.GET_EVENT_BY_SLUG)
-    .map(update => JSON.stringify(update));
+  // @Effect() getEventss$ = this.actions$
+  //   .ofType(eventsActions.GET_EVENTS)
+  //   .map(action => JSON.stringify(action.payload))
+    //.switchMap(a => console.log(a));
 
 }
